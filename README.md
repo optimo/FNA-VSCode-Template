@@ -21,7 +21,7 @@ Start new FNA projects with Nez quickly and easily with handy setup scripts, a v
 
 ## Setup Instructions ##
 1. Download and unzip the ZIP archive (don't clone the repo!)
-2. Run `./getFNA.sh` (macOS) or `./getFNA.ps1` (windows) to download the latest Nez, FNA and fnalibs to the directory. You can run this script again if you want to update either FNA or the fnalibs at a later point.
+2. Run `./getFNA.sh` (MacOS), `./getFNA-linux.sh` (Linux),  or `./getFNA.ps1` (Windows) to download the latest Nez, FNA and fnalibs to the directory. You can run this script again if you want to update either FNA or the fnalibs at a later point.
 3. Open the root folder that contains the .sln file in Visual Studio Code or the .sln file directly in Visual Studio. Note that only Visual Studio Code has an effect builder command.
 
 That's it! Now you're ready to build and run the base project. If you get missing DLL errors (pointing at SDL) when running in Visual Studio copy the FNA libs into your `/usr/local/lib` folder. With Visual Studio Code, `DYLD_LIBRARY_PATH` is set automatically so it won't run into the DLL not found error. Nez is setup as a submodule so you can update it in the normal fashion.

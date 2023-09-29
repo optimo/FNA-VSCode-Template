@@ -68,7 +68,7 @@ function getLibs()
 {
     # Downloading
     echo "Downloading latest fnalibs..."
-    curl http://fna.flibitijibibo.com/archive/fnalibs.tar.bz2 > "$MY_DIR/fnalibs.tar.bz2"
+    curl https://fna.flibitijibibo.com/archive/fnalibs.tar.bz2 > "$MY_DIR/fnalibs.tar.bz2"
     if [ $? -eq 0 ]; then
         echo "Finished downloading!"
     else
@@ -79,7 +79,7 @@ function getLibs()
     # Decompressing
     echo "Decompressing fnalibs..."
     mkdir -p $MY_DIR/fnalibs
-    tar xjC $MY_DIR/fnalibs -f $MY_DIR/fnalibs.tar.bz2
+    tar xjf $MY_DIR/fnalibs.tar.bz2 -C $MY_DIR/fnalibs
     if [ $? -eq 0 ]; then
         echo "Finished decompressing!"
         echo ""
@@ -145,7 +145,7 @@ fi
 # any files that need to have project_name replaced with the new project name should be here
 files=(project_name.sln .gitignore project_name/project_name.csproj project_name/Game1.cs project_name/DemoComponent.cs project_name/DefaultScene.cs project_name/Program.cs .vscode/tasks.json .vscode/settings.json .vscode/launch.json .vscode/buildEffects.sh .vscode/processT4Templates.sh)
 for file in "${files[@]}"; do
-    sed -i '' "s/project_name/$newProjectName/g" $file
+    sed -i "s/project_name/$newProjectName/g" $file
 done
 
 mv project_name.sln "$newProjectName.sln"
