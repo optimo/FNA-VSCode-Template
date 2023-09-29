@@ -16,7 +16,7 @@ namespace project_name
                 .AddComponent<DemoComponent>()
                 .AddComponent(new PrototypeSpriteRenderer(20, 20));
 
-            var logo = Content.Load<Texture2D>("nez-logo-black");
+            var logo = Content.LoadTexture("Content/Textures/nez-logo-black.png);
             CreateEntity("logo")
                 .SetPosition(Screen.Center)
                 .AddComponent(new SpriteRenderer(logo));
